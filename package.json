@@ -1,0 +1,25 @@
+{
+  "name": "employeemanagement",
+  "version": "1.0.0",
+  "description": "An employee tracking system using mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mchisem/EmployeeManagement.git"
+  },
+  "author": "Maya Chisem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mchisem/EmployeeManagement/issues"
+  },
+  "homepage": "https://github.com/mchisem/EmployeeManagement#readme",
+  "dependencies": {
+    "asciiart-logo": "^0.2.6",
+    "gitignore": "^0.6.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  }
+}
