@@ -1,3 +1,4 @@
+// install in node
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 const logo = require("asciiart-logo");
@@ -21,7 +22,7 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
   if (err) throw err;
   
-const logoText = logo({ name: "Employee Tracker" }).render();
+const logoText = logo({ name: "Employee Management" }).render();
 console.log(logoText);
 
 showDept();
@@ -143,12 +144,11 @@ function employeeTab(){
         type: "list",
         message: "What action would you like to take?",
         choices: ["Add Employee",
-                "View All Employees",
-                "View All Employees by Department",
-                "View All Employees by Manager",
+                "View all Employees",
+                "View all Employees by Department",
+                "View all Employees by Manager",
                 "Remove Employee",
                 "Update Employee Role",
-                "Update Employee Manager BONUS",
                 "EXIT",]
         })
         .then(function(answer) {
@@ -170,9 +170,6 @@ function employeeTab(){
             }
             else if(answer.employeeTab_start === "Update Employee Role") {
                 updateEeRole();
-            }
-            else if(answer.employeeTab_start === "Update Employee Manager BONUS") {
-                updateEeManager();
             }
              else{
               connection.end();
@@ -361,4 +358,3 @@ function updateEeRole(){
             employeeTab();
         });
 }
-
