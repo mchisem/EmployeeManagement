@@ -154,7 +154,7 @@ function employeeTab(){
         .then(function(answer) {
             if (answer.employeeTab_start === "Add Employee") {
                 // console.table - to look better for a list of ees 
-                addEes();
+                addEmployee();
             }
             else if(answer.employeeTab_start === "View All Employees") {
                 viewAllEmpl();
@@ -166,10 +166,10 @@ function employeeTab(){
                 viewsOfManager();
             }
             else if(answer.employeeTab_start === "Remove Employee") {
-                removeEes();
+                removeEmployee();
             }
             else if(answer.employeeTab_start === "Update Employee Role") {
-                updateEeRole();
+                updateEmployee();
             }
              else{
               connection.end();
@@ -177,7 +177,7 @@ function employeeTab(){
           });
 }
 
-function addEes(){
+function addEmployee(){
     inquirer
         .prompt([{
             name:"first_name",
@@ -271,7 +271,7 @@ function viewsOfManager(){
         })
 }
 
-function removeEes(){
+function removeEmployee(){
     inquirer
         .prompt({
             name:"deleted_employee",
@@ -291,7 +291,7 @@ function removeEes(){
         });
 }
 
-function updateEeRole(){
+function updateEmployee(){
     // should show roles before this
     inquirer
         .prompt([{
@@ -358,3 +358,4 @@ function updateEeRole(){
             employeeTab();
         });
 }
+
